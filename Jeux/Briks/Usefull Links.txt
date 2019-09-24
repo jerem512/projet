@@ -1,0 +1,43 @@
+Icon creation
+https://www.favicon.cc/
+
+Website validation
+https://validator.w3.org/#validate_by_upload
+
+propriétés CSS
+https://developer.mozilla.org/fr/
+
+https://kenwheeler.github.io/
+
+https://mdbootstrap.com/
+
+http://fr.learnlayout.com/position.html
+
+Balises Meta
+https://www.alsacreations.com/article/lire/628-balises-meta.html
+
+couleur Picker (ou recherche google)
+https://www.w3schools.com/colors/colors_picker.asp
+
+https://flexboxfroggy.com/#fr
+
+https://github.com/Waltercalling/Webforce3.git
+
+https://sass-lang.com/
+
+Page Rank Calcul
+https://www.calcul-pagerank.fr/
+
+Réseaux Sociaux => balises Opengraph
+https://developers.facebook.com/docs/sharing/webmasters?locale=fr_FR
+
+Google search console
+https://search.google.com/search-console/about?hl=fr
+
+
+/*----- Tutoriels -------*/
+
+=> Html, Css, JS
+https://www.pierre-giraud.com/
+
+Yopmail email poubelle !

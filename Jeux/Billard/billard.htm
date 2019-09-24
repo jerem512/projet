@@ -1,0 +1,62 @@
+<html>
+<head>
+<script language="javascript" src="collisionV5.js"></script>
+<!--<script language="javascript" src="queueV1.js" />-->
+<script  language="javascript" >
+var idx=0;
+function _(idx)
+{
+return document.getElementById(idx);
+}
+
+function deltaChoix(srcId,e)
+{
+posL = _(srcId).offsetLeft; posMouseLeft=e.pageX;
+dx= posMouseLeft - posL;
+ajuste(dx,100);
+}
+
+function ajuste(dx,dmax)
+{
+dx=(dx>dmax)?dmax:dx;
+var lmax= 100;
+dx = parseInt(dx * lmax / dmax,10);
+_("p1").style.width=dx+'px';
+_("p2").style.width='0px';
+_("p3").style.width='0px';
+_("p4").style.width=(lmax-dx)+'px';
+}
+
+function slcControle(srcId)
+{
+src = _(srcId);
+for (e in src)
+htm+=e+":"+src[e]+"\n";
+//alert(htm); 
+//left = .offsetLeft;
+
+htm="test controle...<br><table border='0' style='border:1px solid black;height:25px;margin:0px;' cellspacing='0' cellpadding='0'>";
+htm+="<tr><td id='p1' style='background:gray;width:50px;'></td><td id='p2'  style='background:green;width:0px;'></td><td id='p3'  style='background:lightgreen;width:0px;'></td><td id='p4'  style='background:white;width:50px;'></td></tr>";
+htm+="</table>";
+_(srcId).innerHTML=htm;
+}
+</script>
+<style>
+input{font-family:Tahoma;font-size:12px;width:40px;}
+</style>
+</head>
+
+<body onload="depart();slcControle('dcontrole');" onresize="getPosition();" onclick="tirer();" id="body">
+<center>
+<b>billard v0.6&beta;</b></br>
+<!--<input type="checkbox" onclick="d=this.checked;depart();">mode debug<br>-->
+<div id="debug_" style="font-family:Tahoma;font-size:12px;position:absolute;top:0px;left:0px;"></div>
+<div id="ecran" style="background:url('img/plateau.png');left:0px;width:720px;height:402px;"></div></br>
+<div id="ecran2" style="left:0px;width:720px;height:402px;position:absolute;" ></div>
+<div id="info" style="left:480px;position:absolute;" ></div>
+
+<div id="dcontrole" style="position:absolute;" onmousemove="deltaChoix('dcontrole',event);"></div>
+</center>
+<center><br/><br/><br/><div style="font-family:Tahoma;font-size:9px">derni&egrave;re mise &agrave; jour sur mon site : <a href="http://www.crew.free.fr">http://www.crew.free.fr</a><br>powered by <b>AmRouNiX</b> / <b>MaSTeR-KiLLeR</b> (<i>A. Selim</i>) <br> Toutes copies autoris&eacute;es !</div></center>
+</body>
+</html>

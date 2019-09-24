@@ -1,0 +1,10 @@
+/*     */
+main>div ,main>div>form{
+	height: 100vh;
+}
+div>div>div{
+	height: 15vh;
+	width: 15vh;
+	border: 1px solid black;
+}
+

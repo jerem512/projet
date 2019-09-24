@@ -1,0 +1,180 @@
+<html>
+<head>
+<script language="javascript">
+
+//coordonnée de la balle blanche
+var posX = 240,posY = 250;
+//distance & force maxi de la queue
+var dmin = 10, dmax = 120, fmax = 30;
+
+//pr simplifier les appel des objets
+function _(idx) 
+	{return document.getElementById(idx);}	
+	
+function dessinQueue(angle,deltaForce)
+{
+	Lq = 200; // longueur de la queue	
+	pcos=Math.cos(angle);
+	psin=Math.sin(angle);
+	xmin= posX+(dmin+deltaForce)*pcos;
+	ymin= posY+(dmin+deltaForce)*psin;
+	xmoy= posX+(dmin+deltaForce+10)*pcos;
+	ymoy= posY+(dmin+deltaForce+10)*psin;
+	xmax= posX+(dmin+deltaForce+Lq)*pcos;
+	ymax= posY+(dmin+deltaForce+Lq)*psin;	
+
+	htm=ligne2(xmin,ymin,xmoy,ymoy,6,'#c0c0c0');	
+	htm+=ligne2(xmoy,ymoy,xmax,ymax,6,'brown');	
+	
+	return htm;
+}
+
+
+function bouger(px,py)
+{
+angle= Math.atan2(py-posY,px-posX);
+deltaForce= Math.sqrt((py-posY)*(py-posY)+(px-posX)*(px-posX));
+deltaForce=((deltaForce+dmin)>dmax) ? dmax : deltaForce;
+deltaForce=(deltaForce<dmin) ? dmin : deltaForce;
+_("ecran").innerHTML=dessinQueue(angle,deltaForce);
+}
+
+function bougerQueue(event)
+{
+var ev = event || window.event;
+//getProp(ev);
+tmp=setTimeout("bouger("+(ev.pageX||ev.clientX)+","+(ev.pageY||ev.clientY)+")",10);
+}
+
+//retourne les proprietes d'un objet
+function getProp(x)
+{
+	htm="";
+	for (e in x)
+	htm+=e+":"+x[e]+"<br>";
+	_("debug_").innerHTML=htm;
+}
+
+function init()
+{
+	
+	/*htm="";
+	for (a=0;a<50;a++)
+	{
+	pcos=Math.cos(a*Math.PI/50*2);
+	psin=Math.sin(a*Math.PI/50*2);
+	xmin= 40*pcos;
+	ymin= 40*psin;
+	xmax= 250*pcos;
+	ymax= 250*psin;	
+	htm+=ligne2(250+xmin,250+ymin,250+xmax,250+ymax,2,'red');	
+	}
+	_("ecran").innerHTML= htm;
+	*/
+	document.onmousemove=bougerQueue;
+	
+	_("plateau").innerHTML="<img src='balle.png' style='left:"+(posX-8)+"px;top:"+(posY-8)+"px;position:absolute;'>";
+	
+	
+	//_("ecran").innerHTML+=ligne2(50,50,200,250,3,'blue');
+}
+
+
+function ajoutPix(x, y, l, h, c)
+{
+	return "<div style='left:"+x+"px;top:"+y+"px;width:"+l+"px;height:"+h+"px;background-color:"+c+";overflow:hidden;position:absolute;'><\/div>";
+}
+
+
+function ligne2(x1, y1, x2, y2, diam, c)
+{
+htm="";
+if (c==null) 
+	c="black"; //couleur par defaut
+if (diam==null) 
+	diam=2; //epaiseur par defaut	
+	if(x1 > x2)
+	{
+	//swap(x1,x2);
+		var z = x2;x2 = x1;x1 = z;
+		z = y2;y2 = y1;y1 = z;
+	}
+	var dx = x2-x1, dy = Math.abs(y2-y1); //delta x & y
+	var x = x1, y = y1;
+	var ySens = (y1 > y2)? -1 : 1; //direction de Y
+	
+	if(dx < dy)
+		{
+		var d2 = diam>>1; //equivalent à Math.round(diam/2);
+
+		var dxy = 2*(dx - dy),
+		p = 2*dx-dy,
+		py = y;
+		
+		if(y2 > y1)
+		{
+			while(dy > 0)
+			{   --dy;
+				y += ySens;
+				if(p > 0)
+				{
+					htm+=ajoutPix(x++, py, diam, y-py+d2,c);
+					p += dxy;
+					py = y;
+				}
+				else p += 2*dx;
+			}
+			htm+=ajoutPix(x2, py, diam, y2-py+d2+1,c);
+		}
+		else
+		{
+			while(dy > 0)
+			{--dy;
+				if(p > 0)
+				{
+					htm+=ajoutPix(x++, y, diam, py-y+d2,c);
+					y += ySens;
+					p += dxy;
+					py = y;
+				}
+				else
+				{
+					y += ySens;
+					p += 2*dx;
+				}
+			}
+			htm+=ajoutPix(x2, y2, diam, py-y2+d2,c);
+		}
+	}
+	else
+	{
+		var dxy = 2*(dy - dx),
+		p = 2*dy-dx,
+		px = x;
+		d2 = diam>>1 ;
+		
+		while(dx > 0)
+		{--dx;
+			++x;
+			if(p > 0)
+			{
+				htm+=ajoutPix(px, y, x-px+d2, diam,c);
+				y += ySens;
+				p += dxy;
+				px = x;
+			}
+			else p += 2*dy;
+		}
+		htm+=ajoutPix(px, y, x2-px+d2+1, diam,c);
+	}
+	return htm;
+}
+
+</script>
+</head>
+<body onload="init()">
+<div id="debug_" style="font-family:Tahoma;font-size:12px;"></div><div id="ecran" style="width:500px;height:250px"></div>
+<div id="plateau" style="width:500px;height:250px"></div>
+
+</body>
+</html>
