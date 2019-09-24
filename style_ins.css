@@ -1,0 +1,108 @@
+body {
+    padding-top: 50px;
+    /*background-repeat:no-repeat;*/
+    background-size:cover;
+}
+label {
+    font-size: larger;
+    font-weight: bold;
+    color: #000269;
+}
+
+
+.form_col {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 3px 0px;
+    width: 200px;
+    min-height: 1px;
+    text-align: right;
+}
+
+input {
+    padding: 2px;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    outline: none; /* Retire les bordures appliquées par certains navigateurs (Chrome notamment) lors du focus des éléments <input> */
+}
+
+    input:focus {
+        border-color: rgba(82, 168, 236, 0.75);
+        box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+    }
+
+.correct {
+    border-color: rgba(68, 191, 68, 0.75);
+    margin-right: 25px;
+
+}
+
+    .correct:focus {
+        border-color: rgba(68, 191, 68, 0.75);
+        box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+        margin-right: 25px;
+    }
+
+.incorrect {
+    border-color: rgba(191, 68, 68, 0.75);
+    margin-right: 25px;
+}
+
+    .incorrect:focus {
+        border-color: rgba(191, 68, 68, 0.75);
+        box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+        margin-right: 25px;
+    }
+
+i{
+    position:relative;
+    right:25px;
+}
+.margine{
+    margin-right:25px;
+}
+
+
+
+.correctpw {
+    border-color: rgba(68, 191, 68, 0.75);
+
+}
+
+    .correctpw:focus {
+        border-color: rgba(68, 191, 68, 0.75);
+        box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+    }
+
+.incorrectpw {
+    border-color: rgba(191, 68, 68, 0.75);
+
+}
+
+    .incorrectpw:focus {
+        border-color: rgba(191, 68, 68, 0.75);
+        box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+    }
+
+
+.correctm {
+    border-color: rgba(68, 191, 68, 0.75);
+    margin: 24px 25px 24px 0px;
+}
+
+    .correctm:focus {
+        border-color: rgba(68, 191, 68, 0.75);
+        box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+        margin: 24px 25px 24px 0px;
+    }
+
+.incorrectm {
+    border-color: rgba(191, 68, 68, 0.75);
+    margin: 24px 25px 24px 0px;
+}
+
+    .incorrectm:focus {
+        border-color: rgba(191, 68, 68, 0.75);
+        box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+        margin: 24px 25px 24px 0px;
+    }
