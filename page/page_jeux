@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+	<link rel="stylesheet" href="../css/style_jeu.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<title>Les jeux</title>
+</head>
+<body class="row">
+	<header class="col-12">
+		<h1 class="col-8 offset-2">Drunken Vikings</h1>
+	</header>
+	<main class="mt-5 offset-md-3 col-md-6">
+		<figure class="row">
+			<img src="../medias/drunken-viking.jpg" alt="photo_jeu" class="p-0 col-12 medClass">
+			<figcaption class="col-12 col-md-12">
+				<p class="offset-1 col-10 col-md-6 offset-md-3">Drunken Viking est un jeu fait avec Phaser.js qui vous propose de remonter la fin d’une soirée très arrosée de votre personnage, un Viking.</p>
+				<p class="offset-1 col-10 col-md-10 offset-md-1">Drunken Viking est open source: <a href="https://github.com/cxong/DrunkenViking">https://github.com/cxong/DrunkenViking</a></p>
+				<nav class="col-12 col-md-10 offset-md-1">
+					<ul>
+						<li><a href="" class="click mr-1">Plus d'informations<svg height="6" width="12" class="svgicon icon_down_tick" role="img" aria-hidden="" viewBox="0 0 37 20" version="1.1"><path d="m2.0858 0c-1.1535 0-2.0858 0.86469-2.0858 1.9331 0 0.5139 0.21354 1.0183 0.38704 1.1881l18.113 16.879 18.112-16.879c0.174-0.1696 0.388-0.674 0.388-1.1879 0-1.0684-0.932-1.9331-2.086-1.9331-0.577 0-1.111 0.23008-1.49 0.57992l-14.924 13.894-14.925-13.893c-0.3777-0.34998-0.9134-0.581-1.4902-0.581z"></path></svg></a></li>
+						<ul class="hidden">
+							<li>Status <a href="">Released</a></li>
+							<li>Platformes <a href="">HTML5</a></li>
+							<li>Note <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4)</li>
+							<li>Auteur <a href="https://congusbongus.itch.io/">congusbongus</a></li>
+							<li>Genre <a href="">Puzzle</a></li>
+							<li>Fait avec <a href="">Phaser</a></li>
+							<li>Tags <a href="">minigames</a>,<a href="">pixel</a>,<a href="">Retro</a>,<a href="">Top-Down</a>,<a href="">Turn-based</a>,<a href="">Viking</a></li>
+						</ul>
+					</ul>
+				</nav>
+			</figcaption>
+		</figure>
+		<div class="col-12 p-0 m-0">
+			<iframe mozallowfullscreen="true" allow="autoplay; fullscreen; geolocation; microphone; camera; midi" frameborder="0" src="//v6p9d9t4.ssl.hwcdn.net/html/883833/DrunkenViking-master/index.html?v=1542783961" msallowfullscreen="true" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" id="game_drop" allowtransparency="true" class="
+			col-12 col-md-12"></iframe>
+		</div>	
+	</main>
+	<footer>
+		
+	</footer>
+	<script src="../js/JQuery-3-4.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/bootstrap.js"></script>
+</body>
+</html>

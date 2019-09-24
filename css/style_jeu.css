@@ -1,0 +1,24 @@
+@media screen and (min-width: 1024px){
+	.medClass{
+		display: none;
+	}
+	iframe{	
+		height: 800px;
+		width: 300px;
+	}
+	body{
+		color: white;
+		background-color: rgba(51, 48, 84, 1);
+		text-align: center;
+	}
+}
+@media screen and (max-width: 1024px){
+	body{
+	color: white;
+	background-color: rgba(51, 48, 84, 1);
+	}
+}
+
+ul{
+	list-style: none;
+}
